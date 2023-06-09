@@ -99,3 +99,7 @@ div#inner {
     text-align: left;
 }
 
+
+::selection {
+    background: rgba(92, 82, 159, 0.459);
+}
