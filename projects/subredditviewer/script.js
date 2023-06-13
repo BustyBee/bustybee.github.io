@@ -18,6 +18,10 @@ var msnry = new Masonry( '.grid', {
 
 async function subSearch(subreddit){
 
+    if (navigator.userAgent.includes("Firefox")){
+        alert('This website may not work in Firefox')
+    }
+
     if (!subreddit){
         return console.log('No subreddit entered.')
     }
