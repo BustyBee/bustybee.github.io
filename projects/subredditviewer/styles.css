@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+:root {
+    --text: #ffffff;
+    --background: #1b1e27;
+    --background-lighter: #181a1b;
+    --primary-button: #d2657d;
+    --secondary-button: #eec4cd;
+    --accent: #657dd2;
+}
+
+#header{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-lighter)
+}
+#search{
+    display: flex;
+    align-items: center;
+}
+#stats{
+    text-align: left;
+}
+.subelm{
+    margin: 0 1rem;
+}
+
+
+.grid{
+    text-align: center;
+}
+
+.grid-item{
+    width: 25%;
+    margin: 0;
+}
+
+.img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    font-weight: 350;
+    color: white;
+}
+body{
+    margin: 0;
+    background-color: var(--background);
+}
+p {
+    margin: 0;
+}
+button {
+    color: black;
+    background-color: var(--primary-button);
+    margin: 0 0.5rem;
+    margin-right: 0;
+    border-width: 2px;
+    border-radius: 4px;
+    transition: transform ease 0.2s, box-shadow ease 0.2s;
+    border: none;
+}
+button:hover {
+    box-shadow: 0 10px 40px -5px var(--primary-button);
+    transform: translate(0, -2px);
+}
+input {
+    color: black;
+}
+
+/* mobile devices / low resoultion */
+
+@media screen and (max-width: 700px) {
+    #header{
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+    .subelm {
+        padding: 0.5rem;
+    }
+    .grid-item {
+        width: 50%;
+    }
+}
