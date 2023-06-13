@@ -158,14 +158,5 @@ function checkWindowSize(){
         refreshGrid();
         setTimeout(function() { refreshGrid(); }, 200);
     }
-    // // Get width and height of the window excluding scrollbars
-    // var w = document.documentElement.clientWidth;
-    // var h = document.documentElement.clientHeight;
-    
-    // // Display result inside a div element
-    // console.log("Width: " + w + ", " + "Height: " + h);
 }
-
 window.addEventListener("resize", checkWindowSize);
-
-// window.removeEventListener("resize", displayWindowSize)

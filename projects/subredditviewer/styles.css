@@ -66,6 +66,7 @@ button {
     border-radius: 4px;
     transition: transform ease 0.2s, box-shadow ease 0.2s;
     border: none;
+    height: 22pt;
 }
 button:hover {
     box-shadow: 0 10px 40px -5px var(--primary-button);
