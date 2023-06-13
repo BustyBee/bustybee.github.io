@@ -16,6 +16,12 @@ var msnry = new Masonry( '.grid', {
     gutter: 0
 });
 
+function searchByEnter(event, subreddit){
+    if(event.keyCode === 13) {
+        subSearch(subreddit);
+    }
+}
+
 async function subSearch(subreddit){
 
     if (navigator.userAgent.includes("Firefox")){

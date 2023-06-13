@@ -11,7 +11,7 @@
 <body>
     <div id="header">
         <div id="search" class="subelm">
-            <input type="text" id="subredditinput" placeholder="Subreddit">
+            <input type="text" id="subredditinput" placeholder="Subreddit" onkeydown="searchByEnter(event, this.value)">
             <button onclick="subSearch(document.getElementById('subredditinput').value)">Search</button>
         </div>
         <div id="stats" class="subelm">
