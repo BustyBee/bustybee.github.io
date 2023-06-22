@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TotK Compendium API</title>
+</head>
+<body>
+    <div id="search">
+        <input type="text" id="searchinput" placeholder="eg. Lynel" onkeydown="searchByEnter(event, this.value)">
+        <button id="searchbutton" onclick="search(document.getElementById('searchinput').value)">Search</button>
+    </div>
+    <div id="content" style="display: none;">
+        <table>
+            <tr>
+                <td id="name" class="bold"></td>
+            </tr>
+            <tr>
+                <td id="description"></td>
+            </tr>
+        </table>
+        <div id="imagecontainer">
+            <img id="image">
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
