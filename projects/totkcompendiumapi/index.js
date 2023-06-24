@@ -15,6 +15,8 @@ async function search(query){
     document.getElementById('description').innerHTML = data.description
     document.getElementById('image').src = data.image
     document.getElementById('content').style.display = "flex"
+    if (data.locations === undefined) document.getElementById('locations').innerHTML = ''
+    else document.getElementById('locations').innerHTML = data.locations.join(', ')
 }
 
 function searchByEnter(event, query){
