@@ -15,8 +15,10 @@ async function search(query){
     document.getElementById('description').innerHTML = data.description
     document.getElementById('image').src = data.image
     document.getElementById('content').style.display = "flex"
-    if (data.locations === undefined) document.getElementById('locations').innerHTML = ''
-    else document.getElementById('locations').innerHTML = data.locations.join(', ')
+    if (data.locations !== undefined) document.getElementById('locations').innerHTML = data.locations.join(', ')
+    else if (data.ingredients !== undefined) document.getElementById('locations').innerHTML = data.ingredients
+    else document.getElementById('locations').innerHTML = '' 
+   
 }
 
 function searchByEnter(event, query){
