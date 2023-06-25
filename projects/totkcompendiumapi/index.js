@@ -17,7 +17,9 @@ async function search(query){
     document.getElementById('content').style.display = "flex"
     if (data.locations !== undefined) document.getElementById('locations').innerHTML = data.locations.join(', ')
     else if (data.ingredients !== undefined) document.getElementById('locations').innerHTML = data.ingredients
-    else document.getElementById('locations').innerHTML = '' 
+    else document.getElementById('locations').innerHTML = ''
+
+    window.history.pushState( {} , '', `?entry=${query}` );
    
 }
 
@@ -26,6 +28,12 @@ function searchByEnter(event, query){
         search(query);
     }
 }
+
+
+// In case of url parameters, look those up
+const url = new URL(window.location.href); 
+const param = url.searchParams.get('entry');
+if (param !== null) search(param)
 
 
 // autocomplete
