@@ -11,6 +11,8 @@ async function search(query){
         return console.error(`${query} not found.`)
     }
 
+    console.log(`Successfully got data for ${query}`)
+
     document.getElementById('name').innerHTML = data.name
     document.getElementById('description').innerHTML = data.description
     document.getElementById('image').src = data.image
