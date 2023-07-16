@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to decompress .zs files</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            
+            <h2 class="title gradient">How to decompress .zs files</h2>
+
+            <p>Simply opening .zs files will not always work, as they have to be decompressed first for some software. However, Switch-Toolbox should be able to open them (if not, check if you have the newest version).</p>
+            
+
+            <h3 class="subtitle">Preparations</h3>
+            <p>
+                For this you will need the <a href="https://github.com/TotkMods/Totk.ZStdTool">Totk.ZStdTool</a>. Download <span class="code">zstd-tool.exe</span> from the <a href="https://github.com/TotkMods/Totk.ZStdTool/releases">newest release</a>.
+            </p>
+            <p>
+                Totk.ZStdTool relies on the  <span class="code">.NET 7 Runtime</span>. If you do not have it, opening Totk.ZStdTool will not do anything. You can download it <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">here from Microsoft</a> (for most people, choose x64 installer).
+            </p>
+            <div class="images">
+                <img src="images/zStdTool.png" alt="zStdTool Menu">
+            </div>
+
+            <h3 class="subtitle">Decompression</h3>
+            <p>
+                IMPORTANT: You will first have to provide a Game Path. Open zStdTool and click <span class="code">Settings</span>. Then, simply copy paste the path to your dumped game from explorer, namely the path to the <span class="code">romfs</span> folder.
+            </p>
+            <p>
+                You can either decompress single files or whole folders. First, click <span class="code">Browse</span> for either file or folder and choose the one you want to decompress. Then press <span class="code">Decompress (Folder)</span>. Next, you will be prompted to select a destination. After selecting the destination, the decompression will start automatically. The file(s) will be copied and decompressed to the location you chose. The original file(s) will not be changed.
+            </p>
+            
+            <h3 class="subtitle">Important Considerations</h3>
+            <p>
+                Simply decompressing the 3d model files in the <span class="code">/model</span> folder will NOT be enough for viewing/editing/exporting them with Switch-Toolbox or other tools. You will need to <a href="/tutorials/2023-07-15_extract3dmodels/">decompress the 3d models with a separate tool</a>.
+            </p>
+            <p>
+                If you get any errors on your first try, double check if you have set your Game Path correctly.
+            </p>
+
+            <h3 class="subtitle">Further Tutorials</h3>
+                <ul id="articles">
+                </ul>
+        </main>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>

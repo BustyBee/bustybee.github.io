@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to convert 3d models to .dae</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            
+            <h2 class="title gradient">How to convert 3d models to .dae</h2>
+
+
+            <h3 class="subtitle">Preparations</h3>
+            <p>
+                For this you will need <a href="https://github.com/KillzXGaming/Switch-Toolbox">Switch-Toolbox</a>. Download <span class="code">Toolbox-Latest.zip</span> from <a href="https://github.com/KillzXGaming/Switch-Toolbox/releases">the latest release</a>. Extract the zip.
+            </p>
+            <p>
+                Switch-Toolbox needs <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35">Direct X</a> and <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">C++ redist</a> to work, download and install those. A minimum of .NET Framework 4.6 is also required. 
+            </p>
+            <p>
+                Simply opening the 3d model files after dumping them with your switch or Yuzu will not work. You have to <a href="/tutorials/2023-07-15_extract3dmodels/">decompress them</a> using a special tool.
+            
+            <h3 class="subtitle">DAE Export</h3>
+            <p>
+                As of now, Switch-Toolbox seems to require a Game Path to a folder of the <a href="/tutorials/2023-07-15_gamedump/">dumped game</a>, but this can not be set in the settings (-> glitch). However, when opening some models, you will be prompted to select a Game Path:
+            </p>
+            <div class="images">
+                <img class="small" src="images/gamedumprequired.png" alt="">
+            </div>
+            <p>
+                Select your <span class="code">romfs</span> folder and Switch-Toolbox should open and from now on work...
+            </p>
+            <p>
+                In Switch-Toolbox, expand the file (see circled below). You should now see the 3d model to the right. You can move and scale it with your mouse (click and drag, sroll).
+            </p>
+            <p>
+                To export as .dae, also expand the <span class="code">Models</span> folder and right click the 3d model, in this case <span class="code">Bass</span> (see circled below) and choose <span class="code">Export</span>.
+            </p>
+            <div class="images">
+                <img class="big" src="images/switchtoolbox3dmodel.png" alt="3D Model in Switch-Toolbox">
+            </div>
+            <p>
+                You will then be prompted to choose the export loaction. It is advisable to create a new folder, since multiple files will be created. Click <span class="code">Save</span> and a new Dialogue will open in Switch-Toolbox, asking what exactly to export and how. The default settings should be fine, make sure you have <span class="code">Export Textures</span> checked though. 
+            </p>
+            <p>
+                To start exporting, click <span class="code">Ok</span>. After a short time, Switch-Toolbox should notify you that the export was successfull. And that's it! In the folder you specified you should now find the 3d model as a .dae and all it's textures. This can now be imported into software like blender.
+            </p>
+            <div class="images">
+                <img class="big" src="images/3dmodelblender.png" alt="">
+            </div>
+
+            
+            <h3 class="subtitle">Important Considerations</h3>
+            <p>
+
+            </p>
+
+            <h3 class="subtitle">Further Tutorials</h3>
+                <ul id="articles">
+                </ul>
+
+        </main>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>

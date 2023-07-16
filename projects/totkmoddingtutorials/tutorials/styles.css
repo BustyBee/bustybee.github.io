@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+
+:root {
+    --text: #ffffff;
+    --background: #1b1e27;
+    --background-lighter: #181a1b;
+    --primary-button: #d2657d;
+    --secondary-button: #eec4cd;
+    --accent: #657dd2;
+    --accent-lighter: #9dade9;
+}
+
+
+.gradient {
+    background: linear-gradient(120deg, var(--primary-button), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: var(--background-lighter);
+    cursor: url(https://cdn.custom-cursor.com/db/4620/32/arrow2644.png) , default;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+main{
+    background-color: var(--background);
+    max-width: 1200px;
+    margin: 1rem 2rem;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title{
+    font-size: 24pt;
+    margin: 0;
+    font-weight: 400;
+}
+
+.subtitle{
+    font-size: 16pt;
+    margin: 0;
+    font-weight: 400;
+    margin-top: 2rem;
+    text-decoration: underline;
+}
+
+.code{
+    font-family: 'Fira Code', monospace;
+    font-size: 11pt;
+    padding: 0rem 2pt;
+    background-color: black;
+}
+
+p, li{
+    font-size: 14pt;
+    text-align: justify;
+    line-height: 140%;
+}
+li {
+    margin: 0.5rem 0rem;
+}
+
+img{
+    height: 300px;
+    width: auto;
+    padding: 0.5rem;
+}
+
+img.small{
+    height: 150px;
+}
+
+img.big{
+    height: 400px;
+}
+
+a{
+    color: var(--accent);
+}
+a:hover{
+    color: var(--accent-lighter);
+}
+
+
+@media only screen and (max-width: 800px) {
+    main{
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .title{
+        text-align: center;
+    }
+
+    p{
+        line-height: 150%;
+    }
+
+    img, img.small, img.big{
+        width: 85vw;
+        height: auto;
+        margin: 1rem 0rem;
+        padding: 0;
+    }
+}

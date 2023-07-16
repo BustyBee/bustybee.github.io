@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to dump the game files (from .xci/.nsp) using Yuzu</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            
+            <h2 class="title gradient">How to dump the game files (xci/nsp) using Yuzu ("RomFS")</h2>
+            
+
+            <h3 class="subtitle">Preparations</h3>
+            <p>
+                You should already have the game as a <span class="code">.xci</span> or <span class="code">.nsp</span> and added to Yuzu. Make sure the game works in Yuzu.
+            </p>
+
+            <h3 class="subtitle">Dumping</h3>
+            <p>
+                Right click the game in Yuzu and click <span class="code">Dump RomFS -> Dump RomFS</span>. Yuzu will not respond for a couple of seconds and then ask what dump mode. Choose <span class="code">Full</span> and press <span class="code">OK</span>. Yuzu will then dump the game for you, which will take about 5-15 minutes.
+            </p>
+            <p>
+                When finished, Yuzu will prompt you that the operation was successfull and when you press ok, open the location of the dumped game in the explorer. The dumped game should be in the Yuzu folder under <span class="code">/dump/0100F2C0115B6000/romfs</span>. You can open the Yuzu folder by pressing <span class="code">File -> Open yuzu Folder</span> in Yuzu.
+            </p>
+            <p>
+                The full path of the dumped game should look something like this: <span class="code">C:/Users/USERNAME/AppData/Roaming/yuzu/dump/0100F2C0115B6000/romfs</span> (replace <span class="code">USERNAME</span> with your username).
+            </p>
+            
+            <h3 class="subtitle">Important Considerations</h3>
+            <p>
+                Many of the files are still compressed. The compressed files can be identified by their <span class="code">.zs</span> file extension.
+            </p>
+
+            <h3 class="subtitle">Further Tutorials</h3>
+                <ul id="articles">
+                </ul>
+
+        </main>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>

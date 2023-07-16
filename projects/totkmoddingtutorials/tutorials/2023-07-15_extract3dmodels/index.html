@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to extract all 3D models using Yuzu</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            
+            <h2 class="title gradient">How to extract all 3D models from TotK using Yuzu</h2>
+            
+
+            <h3 class="subtitle">Preparations</h3>
+            <p>
+                Make sure the game acually runs in Yuzu. There are plenty of tutorials out there on how to get Tears of the Kingdom up and running.
+            </p>
+
+            <h3 class="subtitle">Setup</h3>
+            <p>
+                Download <span class="code">totk_mc_batch_decompressor_release.zip</span> of the <a href="https://gamebanana.com/tools/13236">mc_decompressor</a> and unzip the contents.
+                
+            </p>
+            <p>
+                In Yuzu, click on <span class="code">File -> Open yuzu Folder</span>. This should open the Yuzu Folder in the explorer. The path might look something like this: <span class="code">C:/Users/USERNAME/AppData/Roaming/yuzu/</span>. 
+                <br>
+                Navigate to <span class="code">/sdmc/atmosphere/contents</span> and paste the folder <span class="code">0100F2C0115B6000</span>, which you just unzipped, in there.
+            </p>
+
+
+            <h3 class="subtitle">"Extraction"</h3>
+            <p>
+                Restart Yuzu and open the game. It will seemingly be stuck in the "loading" screen, but this is actually a good sign, as this means that the files are being exported.
+                <br>
+                After about 3 to 15 minutes, the game will finally load into the main menu. This means that the process has finished.
+            </p>
+            <p>
+                Two new folders should now haven been created in the <span class="code">/sdmc</span> folder in the Yuzu folder. <span class="code">mc_output0</span> and <span class="code">mc_output1</span>. These two folders contain all the 3d models of TotK as <span class="code">.bfres</span>.
+            </p>
+            <p>
+                You can open these files with <a href="https://github.com/KillzXGaming/Switch-Toolbox">Switch-Toolbox</a> and also convert them into <span class="code">.dae</span> files, so they can be imported into software like Blender.
+            </p>
+
+            <h3 class="subtitle">Important Considerations</h3>
+            <p>
+                <ul id="articles">
+                </ul>
+            </p>
+            
+        </main>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>
