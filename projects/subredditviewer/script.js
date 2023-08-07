@@ -78,31 +78,37 @@ async function getPosts(subreddit) {
         let imageUrl = images[i].data.url;
         
         // check if url is img
-        //  |-what it can include-----------------------------------------------------------------------------------------|     |-what it can't include----|
-        if (((imageUrl.includes('.jpg') || imageUrl.includes('.png') || imageUrl.includes('.gif') || imageUrl.includes('.gifv'))) && !(imageUrl.includes('imgur')) || ((imageUrl.includes('imgur')) && imageUrl.includes('.gifv'))){
+        //  |-what it can include------------------------------------------------------------------------------------------------|
+        if (imageUrl.includes('.jpg') || imageUrl.includes('.png') || imageUrl.includes('.gif') || imageUrl.includes('.gifv')) {
             
             // special case for imgur gifs:
-            if (imageUrl.includes('imgur') && imageUrl.includes('.gifv')){
-                imageUrl = imageUrl.split('.gifv')[0]+'.gif'
+            // -> Don't show if nsfw
+            if ( ! ( 'nsfw' in images[i].data.preview.images[0].variants && (imageUrl.includes('imgur')) )) {
+                // if (imageUrl.includes('imgur') && imageUrl.includes('.gifv')){
+                //     imageUrl = imageUrl.split('.gifv')[0]+'.gif'
+                // }
+
+                // create container
+                let imgDiv = document.createElement('div');
+                imgDiv.classList.add('grid-item');
+
+                // create the img element
+                let imageElm = document.createElement('img');
+                imageElm.src = imageUrl;
+                imageElm.classList.add('img');
+                imageElm.id = 'img '+i;
+
+                // add img to the dom
+                imgDiv.appendChild(imageElm);
+                galleryDiv.appendChild(imgDiv);
+                await msnry.appended(imgDiv);
+
+                // update layout
+                await msnry.layout();
             }
-
-            // create container
-            let imgDiv = document.createElement('div');
-            imgDiv.classList.add('grid-item');
-
-            // create the img element
-            let imageElm = document.createElement('img');
-            imageElm.src = imageUrl;
-            imageElm.classList.add('img');
-            imageElm.id = 'img '+i;
-
-            // add img to the dom
-            imgDiv.appendChild(imageElm);
-            galleryDiv.appendChild(imgDiv);
-            await msnry.appended(imgDiv);
-
-            // update layout
-            await msnry.layout();
+            else {
+                console.log('image was NSFW and IMGUR, thus not showing')
+            }
         }
         if ( i === images.length-1){
             let loadmoreTrigger = document.createElement('div');
