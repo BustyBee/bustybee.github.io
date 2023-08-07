@@ -84,9 +84,6 @@ async function getPosts(subreddit) {
             // special case for imgur gifs:
             // -> Don't show if nsfw
             if ( ! ( 'nsfw' in images[i].data.preview.images[0].variants && (imageUrl.includes('imgur')) )) {
-                // if (imageUrl.includes('imgur') && imageUrl.includes('.gifv')){
-                //     imageUrl = imageUrl.split('.gifv')[0]+'.gif'
-                // }
 
                 // create container
                 let imgDiv = document.createElement('div');
@@ -106,9 +103,7 @@ async function getPosts(subreddit) {
                 // update layout
                 await msnry.layout();
             }
-            else {
-                console.log('image was NSFW and IMGUR, thus not showing')
-            }
+
         }
         if ( i === images.length-1){
             let loadmoreTrigger = document.createElement('div');
