@@ -38,7 +38,7 @@ async function subSearch(subreddit){
     try{
         sampleImage = (await axios.get(`https://api.reddit.com/r/${subreddit}/top/.json?limit=1&t=all`)).data.data.children;
     } catch(err){
-        if (err.message.includes('network')){
+        if (err.message.includes('Network')){
             galleryDiv.innerHTML = '<br>'+err.message+'<br><br>If you are using Firefox, try turning off "Enhanced Tracking Protection" (Lock icon, left of URL)';
         }
         else{
