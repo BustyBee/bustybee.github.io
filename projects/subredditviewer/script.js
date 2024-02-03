@@ -24,10 +24,6 @@ function searchByEnter(event, subreddit){
 
 async function subSearch(subreddit){
 
-    if (navigator.userAgent.includes("Firefox")){
-        alert('This website may not work in Firefox')
-    }
-
     if (!subreddit){
         return console.log('No subreddit entered.')
     }
@@ -42,7 +38,12 @@ async function subSearch(subreddit){
     try{
         sampleImage = (await axios.get(`https://api.reddit.com/r/${subreddit}/top/.json?limit=1&t=all`)).data.data.children;
     } catch(err){
-        galleryDiv.innerHTML = '<br>'+err.message;
+        if (err.message.includes('network')){
+            galleryDiv.innerHTML = '<br>'+err.message+'<br><br>If you are using Firefox, try turning off "Enhanced Tracking Protection" (Lock icon, left of URL)';
+        }
+        else{
+            galleryDiv.innerHTML = '<br>'+err.message;
+        }
         return console.log(err.message, err);
     }
     let nameElm = document.getElementById('statname');
