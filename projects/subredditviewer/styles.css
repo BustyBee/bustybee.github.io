@@ -75,6 +75,14 @@ button:hover {
 input {
     color: black;
 }
+select{
+    background-color: var(--secondary-button);
+    border: 0;
+    border-radius: 4px;
+}
+select, option{
+    color: black;
+}
 
 /* mobile devices / low resoultion */
 

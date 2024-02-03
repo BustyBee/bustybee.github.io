@@ -54,16 +54,17 @@ async function subSearch(subreddit){
     galleryDiv.innerHTML = '';
     after = '';
     msnry.reloadItems();
-    getPosts(subreddit);
+    let timeframe = document.getElementById('timeframe').value;
+    getPosts(subreddit,timeframe);
 }
 
-async function getPosts(subreddit) {  
+async function getPosts(subreddit,timeframe) {  
     console.log('The "after" variable is: '+after);
 
     // fetch images
     let apiRes;
     try{
-        apiRes = (await axios.get(`https://api.reddit.com/r/${subreddit}/top/.json?limit=30&t=all&after=${after}`)).data.data;
+        apiRes = (await axios.get(`https://api.reddit.com/r/${subreddit}/top/.json?limit=30&t=${timeframe}&after=${after}`)).data.data;
     } catch(err){
         galleryDiv.innerHTML = '<br>'+err.message;
         return console.log(err.message, err)

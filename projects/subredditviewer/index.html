@@ -19,6 +19,17 @@
             <input type="text" id="subredditinput" placeholder="Subreddit" onkeydown="searchByEnter(event, this.value)">
             <button onclick="subSearch(document.getElementById('subredditinput').value)">Search</button>
         </div>
+        <div class="subelm">
+            <label for="timeframe">Timeframe:</label>
+            <select name="timeframe" id="timeframe">
+                <option value="hour">Hour</option>
+                <option value="day">Day</option>
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+                <option value="all">All</option>
+              </select>
+        </div>
         <div id="stats" class="subelm">
             <table>
                 <tr>
@@ -30,8 +41,7 @@
                     <td id="statsubscribers">0</td>
                 </tr>
             </table>
-        </div>
-        
+        </div>        
     </div>
 
     <div class="grid">
