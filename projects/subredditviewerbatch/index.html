@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/files/favicon.png" type="image/x-icon">
+    <title>Busty Bee | Batch Subredditviewer</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bustybee.github.io/projects/subredditviewerbatch">
+    <meta property="og:title" content="Busty Bee | Batch Subredditviewer">
+    <meta property="og:description" content="Enter any subreddits to see a compilation of it's media. New images will be loaded in as you scroll down.">
+</head>
+<body>
+    <div id="header">
+        <div id="search" class="subelm">
+            <input type="text" id="subredditsinput" placeholder="Subreddits, separated by comma" onkeydown="searchByEnter(event, this.value)">
+            <button id='searchbutton' onclick="search(document.getElementById('subredditsinput').value,document.getElementById('timeframe').value)">Search</button>
+        </div>
+        <div class="subelm">
+            <label for="timeframe">Timeframe:</label>
+            <select name="timeframe" id="timeframe">
+                <option value="hour">Hour</option>
+                <option value="day">Day</option>
+                <option value="week">Week</option>
+                <option value="month" selected="selected">Month</option>
+                <option value="year">Year</option>
+                <option value="all">All</option>
+              </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        <p><br>Enter a Subreddit to see it's topposts.</p>
+    </div>
+
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
