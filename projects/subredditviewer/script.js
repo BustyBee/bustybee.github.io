@@ -5,6 +5,16 @@
 let galleryDiv = document.getElementsByClassName('grid')[document.getElementsByClassName('grid').length-1];
 let after;
 
+// In case of url parameters, look those up
+const url = new URL(window.location.href); 
+const paramSub = url.searchParams.get('sub');
+const paramTime = url.searchParams.get('time');
+if (paramTime !== null) document.getElementById('timeframe').value = paramTime;
+if (paramSub !== null) {
+    document.getElementById('subredditinput').value = paramSub;
+    subSearch(paramSub);
+}
+
 // set layout options
 var msnry = new Masonry( '.grid', {
     itemSelector: ".grid-item", 
@@ -56,6 +66,9 @@ async function subSearch(subreddit){
     after = '';
     msnry.reloadItems();
     let timeframe = document.getElementById('timeframe').value;
+
+    window.history.pushState( {} , '', `?sub=${subreddit}&time=${timeframe}` );
+
     getPosts(subreddit,timeframe);
 }
 
