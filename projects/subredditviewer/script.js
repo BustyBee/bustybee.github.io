@@ -145,7 +145,7 @@ function startObserving(targetId){
             if (entry.isIntersecting){
                 console.log(`Loading new images...`);
                 stopObserving(entry.target.id, observer);
-                setTimeout(function() { getPosts(document.getElementById('subredditinput').value); }, 500);
+                setTimeout(function() { getPosts(document.getElementById('subredditinput').value,document.getElementById('timeframe').value); }, 500);
             }
         })()
         )
