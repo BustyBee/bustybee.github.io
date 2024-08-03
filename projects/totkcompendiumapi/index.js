@@ -1,7 +1,9 @@
+let API_URL = 'https://totk-compendium-api.onrender.com'
+
 async function search(query){
     let data = {}
     try{
-        data = (await axios.get(`https://totk-compendium.cyclic.app/entry/${query}`)).data
+        data = (await axios.get(`${API_URL}/entry/${query}`)).data
     }
     catch(err){
         return console.error(err.message)
@@ -44,7 +46,7 @@ let autocompOpts = [];
 
 (async () => {
     try{
-        autocompOpts = (await axios.get('https://totk-compendium.cyclic.app/all')).data
+        autocompOpts = (await axios.get(`${API_URL}/all`)).data
     }
     catch(err){
         alert('Autocomplete Error: Autocomplete will not work\n' + err.message)
